@@ -21,7 +21,6 @@
 @import url(font-awesome.min.css);
 @import url(meanmenu.css);
 @import url(owl.carousel.min.css);
-@import url(swiper.min.css);
 @import url(slick.css);
 @import url(jquery.fancybox.min.css);
 @import url(jquery-ui.css);
@@ -394,7 +393,7 @@ ul.btn li:last-child {
 .banner_main::before {
      position: absolute;
      content: "";
-     width:50px; 
+     width:50px;
      height:40px;
      background: url(../images/cross.png);
      background-repeat: no-repeat;
@@ -404,7 +403,7 @@ ul.btn li:last-child {
 .banner_main::after {
      position: absolute;
      content: "";
-     width:50px; 
+     width:50px;
      height:40px;
      background: url(../images/cross.png);
      background-repeat: no-repeat;
