@@ -1,37 +1,33 @@
-<div class="contact">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="titlepage">
-          <h2>Log in</h2>
+<div class="login">
+  <form #form="ngForm" (ngSubmit)="submitHandler(form)">
+    <div class="header">
+      <h3>Login</h3>
+      <app-error-message/>
+    </div>
+    <div class="fields">
+      <div class="field">
+        <label>Email</label>
+        <input type="text" name="email" ngModel   #email="ngModel" required />
+        <div class="error" *ngIf="email.touched">
+          <div *ngIf="email.errors?.['required']">
+            Email is required!
+          </div>
         </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-md-10 offset-md-1">
-        <form id="request" class="main_form">
-          <div class="row">
-
-            <div class="col-md-12">
-              <input class="contactus" placeholder="Email" type="type" name="Email">
-            </div>
-
-            <div class="col-md-12">
-              <input class="contactus" placeholder="Password" type="type" name="Password">
-            </div>
-
-            <div class="col-md-12">
-              <button class="send_btn">Login
-              </button>
-            </div>
-            <div class="col-md-12">
-              <a id="registerLogin" href="">Already have an account? Login here</a>
-            </div>
-
+      <div class="field">
+        <label>Password</label>
+        <input type="password" name="password" ngModel #password="ngModel" required />
+        <div class="error" *ngIf="password.touched">
+          <div *ngIf="password.errors?.['required']">
+            Password is required!
           </div>
-        </form>
+        </div>
+      </div>
+      <div class="button">
+        <input type="submit" value="Login" />
       </div>
     </div>
-  </div>
+  </form>
 </div>
+
 

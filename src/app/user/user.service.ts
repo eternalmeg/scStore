@@ -1,5 +1,5 @@
 import {Injectable, OnDestroy} from '@angular/core';
-import {BehaviorSubject, Subscription} from "rxjs";
+import {BehaviorSubject, Subscription, tap} from "rxjs";
 import {User} from "../types/user";
 import {HttpClient} from "@angular/common/http";
 import {environment} from "../../environments/environment";
@@ -12,6 +12,7 @@ export class UserService implements OnDestroy{
   public user$ = this.user$$.asObservable();
 
   user: User | undefined;
+  api ='http://localhost:3000'
 
 
   get isLoggedIn(): boolean {
@@ -33,7 +34,7 @@ export class UserService implements OnDestroy{
     password: string,
     rePassword: string) {
     return this.http
-      .post<User>(`${environment.apiUrl}/auth/register`, {
+      .post<User>(`${this.api}/auth/register`, {
         name,
         email,
         phone,
@@ -42,9 +43,21 @@ export class UserService implements OnDestroy{
       })
   }
 
+  login(email: string, password: string) {
+    return this.http
+      .post<User>(`${this.api}/auth/login`, { email, password })
+      .pipe(tap((user) => this.user$$.next(user)));
+  }
 
+  logout() {
+    return this.http.post<User>(`${this.api}/auth/logout`, {})
+      .pipe(tap(()=> this.user$$.next(undefined)))
+  }
 
-
+getProfile() {
+    return this.http.get<User>(`${this.api}/auth/profile`)
+      .pipe(tap(user => this.user$$.next(user)))
+}
 
   ngOnDestroy(): void {
     this.subscription.unsubscribe();

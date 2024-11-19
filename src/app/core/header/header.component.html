@@ -20,16 +20,16 @@
             <div class="collapse navbar-collapse" id="navbarsExample04">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item d_none">
-                  <a class="nav-link" href="#">Profile</a>
+                  <a class="nav-link" routerLink="/my-profile" *ngIf="isLoggedIn" >Profile</a>
                 </li>
                 <li class="nav-item active">
-                  <a class="nav-link" href="index.html">Home</a>
+                  <a class="nav-link" routerLink="/home">Home</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="about.html">About</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="product.html">Catalog</a>
+                  <a class="nav-link" routerLink="/catalog">Catalog</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="contact.html">Contacts</a>
@@ -38,13 +38,13 @@
                   <a class="nav-link" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
                 </li>
                 <li class="nav-item d_none">
-                  <a class="nav-link" href="#">Login</a>
+                  <a class="nav-link" routerLink="login" *ngIf="!isLoggedIn">Login</a>
                 </li>
                 <li class="nav-item d_none">
-                  <a class="nav-link" href="#">Register</a>
+                  <a class="nav-link"routerLink="register" *ngIf="!isLoggedIn">Register</a>
                 </li>
                 <li class="nav-item d_none">
-                  <a class="nav-link" href="#">Logout</a>
+                  <a class="nav-link" routerLink="/logout" (click)="logoutHandler()"  *ngIf="isLoggedIn">Logout</a>
                 </li>
               </ul>
             </div>

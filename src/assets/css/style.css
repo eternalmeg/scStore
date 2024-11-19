@@ -395,7 +395,6 @@ ul.btn li:last-child {
      content: "";
      width:50px;
      height:40px;
-     background: url(../images/cross.png);
      background-repeat: no-repeat;
      bottom: -38px;
      right: 38px;
@@ -405,7 +404,7 @@ ul.btn li:last-child {
      content: "";
      width:50px;
      height:40px;
-     background: url(../images/cross.png);
+
      background-repeat: no-repeat;
      bottom: -38px;
      left: 38px;

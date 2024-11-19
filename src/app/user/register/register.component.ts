@@ -20,7 +20,6 @@ export class RegisterComponent {
       return
     }
     const {
-
       name,
       email,
       phone,
@@ -30,7 +29,7 @@ export class RegisterComponent {
     this.userService
       .register(name, email, phone, passwords.password, passwords.rePassword)
       .subscribe(() => {
-        console.log(name, email, phone, passwords.password, passwords.rePassword)
+        this.router.navigate(['/home'])
 
       })
 

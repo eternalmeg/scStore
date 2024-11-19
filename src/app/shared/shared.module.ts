@@ -3,18 +3,23 @@ import { CommonModule } from '@angular/common';
 import { LoaderComponent } from './loader/loader.component';
 import {AppMatchPasswordsDirective} from "./directives/app-match-passwords.directive";
 import {ErrorMessageComponent} from "./error-message/error-message.component";
+import { ErrorPageComponent } from './error-page/error-page.component';
 
 
 @NgModule({
   declarations: [
     LoaderComponent,
     AppMatchPasswordsDirective,
-    ErrorMessageComponent
+    ErrorMessageComponent,
+    ErrorPageComponent,
+    LoaderComponent
 
   ],
   exports: [
     AppMatchPasswordsDirective,
-    ErrorMessageComponent
+    ErrorMessageComponent,
+    ErrorPageComponent,
+    LoaderComponent
   ],
   imports: [
     CommonModule

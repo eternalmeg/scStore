@@ -7,6 +7,7 @@ import {OfferComponent} from './offer/offer.component';
 import {FormsModule} from "@angular/forms";
 import {SharedModule} from "../shared/shared.module";
 import { CreateOfferComponent } from './create-offer/create-offer.component';
+import {RouterLink} from "@angular/router";
 
 
 @NgModule({
@@ -25,11 +26,12 @@ import { CreateOfferComponent } from './create-offer/create-offer.component';
     ProfileComponent,
     CreateOfferComponent
   ],
-  imports: [
-    CommonModule,
-    FormsModule,
-    SharedModule,
-  ]
+    imports: [
+        CommonModule,
+        FormsModule,
+        SharedModule,
+        RouterLink,
+    ]
 })
 export class UserModule {
 }
