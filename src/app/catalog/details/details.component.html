@@ -1,24 +1,35 @@
-<div class="laptop1">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-7">
-        <div class="laptop1_img">
-          <figure><img src="./assets/images/leptop.jpg" alt="#"/></figure>
-        </div>
-      </div>
-      <div class="col-md-5">
-        <div class="titlepage">
-          <h2>Brand: </h2>
-          <h2>Model: </h2>
-          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
-          <a class="read_more" style="margin-right: 10px" href="">Add to cart</a>
-          <a class="read_more" href="#">Cancel</a>
 
-          <a class="read_more" style="margin-right: 10px" href="">Edit</a>
-          <a class="read_more" href="#">Delete</a>
+<div  class="loading-spinner">Updating...</div>
+<ng-container >
+  <div class="three_box1">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="box_text_test">
+            <figure><img src="{{device?.image}}" alt="#"/></figure>
+            <figure><img [src]="'https://logo.clearbit.com/' + device?.brand + '.com'"
+                         alt="{{device?.brand}} logo"
+                         class="brand-logo"></figure>
+            <h3>Brand: {{device?.brand}} </h3>
+            <p>Model: {{device?.model}} </p>
+            <p>Description: {{device?.description}}</p>
+            <p class="price">Price: <span>{{device?.price}} BGN</span></p>
+            <div class="profile-btn"  *ngIf="isLoggedIn && isOwner">
+              <button class="edit-btn" (click)="editHandler()"  >Edit</button>
+              <button class="edit-btn" routerLink="/my-offers">Cancel</button>
+              <button class="edit-btn" (click)="deleteHandler()">Delete</button>
+            </div>
+            <div class="profile-btn"  *ngIf="isLoggedIn && !isOwner">
+              <button class="edit-btn" (click)="buyHandler()"  >Buy</button>
+              <button class="edit-btn" routerLink="/catalog">Cancel</button>
+            </div>
+
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+</ng-container>
+
+
 

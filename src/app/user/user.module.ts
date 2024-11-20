@@ -7,7 +7,8 @@ import {OfferComponent} from './offer/offer.component';
 import {FormsModule} from "@angular/forms";
 import {SharedModule} from "../shared/shared.module";
 import { CreateOfferComponent } from './create-offer/create-offer.component';
-import {RouterLink} from "@angular/router";
+import {Router, RouterLink} from "@angular/router";
+import { UserOffersComponent } from './user-offers/user-offers.component';
 
 
 @NgModule({
@@ -17,14 +18,16 @@ import {RouterLink} from "@angular/router";
     ProfileComponent,
     OfferComponent,
     ProfileComponent,
-    CreateOfferComponent
+    CreateOfferComponent,
+    UserOffersComponent
   ],
   exports: [
     RegisterComponent,
     LoginComponent,
     OfferComponent,
     ProfileComponent,
-    CreateOfferComponent
+    CreateOfferComponent,
+    UserOffersComponent
   ],
     imports: [
         CommonModule,

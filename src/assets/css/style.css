@@ -363,9 +363,10 @@ ul.btn li:last-child {
 .header {
      width: 100%;
      padding: 30px 30px;
-     background: transparent;
+     background: #6f42c1;
      position: absolute;
      z-index: 999;
+
 }
 
 .logo a {

@@ -10,6 +10,8 @@ import {OfferComponent} from "./user/offer/offer.component";
 import {CatalogComponent} from "./catalog/catalog/catalog.component";
 import {DetailsComponent} from "./catalog/details/details.component";
 import {ErrorPageComponent} from "./shared/error-page/error-page.component";
+import {UserOffersComponent} from "./user/user-offers/user-offers.component";
+import {CartComponent} from "./features/cart/cart.component";
 
 const routes: Routes = [
   {path: '',redirectTo: '/home', pathMatch: "full"},
@@ -19,9 +21,12 @@ const routes: Routes = [
   {path: 'my-profile', component: ProfileComponent},
   {path: 'create-offer', component: OfferComponent},
   {path: 'edit-offer/:id', component: CreateOfferComponent},
+  {path: 'my-offers', component: UserOffersComponent},
   {path: 'catalog', component: CatalogComponent},
   {path: 'device-details/:id', component: DetailsComponent},
-  {path: '404', component: ErrorPageComponent}
+  {path: 'cart', component: CartComponent},
+  {path: '404', component: ErrorPageComponent},
+  {path: '**', component: ErrorPageComponent}
 ];
 
 @NgModule({

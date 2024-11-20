@@ -8,65 +8,23 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-md-12">
+      <div class="empty"  *ngIf="noDevices">
+        <p class="no-products">There are not products yet</p>
+      </div>
+
+      <div class="col-md-12" *ngIf="!noDevices">
         <div class="our_products">
           <div class="row">
-            <div class="col-md-4 margin_bottom1">
-              <div class="product_box">
-                <figure><img src="./assets/images/product1.png" alt="#"/></figure>
-                <h3>Computer</h3>
+            <div class="col-md-4 margin_bottom1"  *ngFor="let device of devices">
+              <div class="product_box" >
+                <h3>{{device.model}}</h3>
+                <figure><img src="{{device.image}}" alt="#"/></figure>
+                <button type="button" [routerLink]="['/', 'device-details', device._id]">Details</button>>
               </div>
             </div>
-            <div class="col-md-4 margin_bottom1">
-              <div class="product_box">
-                <figure><img src="./assets/images/product2.png" alt="#"/></figure>
-                <h3>Laptop</h3>
-              </div>
-            </div>
-            <div class="col-md-4 margin_bottom1">
-              <div class="product_box">
-                <figure><img src="./assets/images/product3.png" alt="#"/></figure>
-                <h3>Tablet</h3>
-              </div>
-            </div>
-            <div class="col-md-4 margin_bottom1">
-              <div class="product_box">
-                <figure><img src="./assets/images/product4.png" alt="#"/></figure>
-                <h3>Speakers</h3>
-              </div>
-            </div>
-            <div class="col-md-4 margin_bottom1">
-              <div class="product_box">
-                <figure><img src="./assets/images/product5.png" alt="#"/></figure>
-                <h3>internet</h3>
-              </div>
-            </div>
-            <div class="col-md-4 margin_bottom1">
-              <div class="product_box">
-                <figure><img src="./assets/images/product6.png" alt="#"/></figure>
-                <h3>Hardisk</h3>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="product_box">
-                <figure><img src="./assets/images/product7.png" alt="#"/></figure>
-                <h3>Rams</h3>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="product_box">
-                <figure><img src="./assets/images/product8.png" alt="#"/></figure>
-                <h3>Bettery</h3>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="product_box">
-                <figure><img src="./assets/images/product9.png" alt="#"/></figure>
-                <h3>Drive</h3>
-              </div>
-            </div>
+
             <div class="col-md-12">
-              <a class="read_more" href="#">See More</a>
+              <a class="read_more" *ngIf="!isAllLoaded" (click)="loadAllDevices()" >See More</a>
             </div>
           </div>
         </div>

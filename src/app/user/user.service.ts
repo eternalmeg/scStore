@@ -59,6 +59,14 @@ getProfile() {
       .pipe(tap(user => this.user$$.next(user)))
 }
 
+updateProfile(name: string, phone: string) {
+    return this.http.put<User>(`${this.api}/auth/profile`, {name, phone})
+      .pipe(tap((user) => this.user$$.next(user)));
+}
+
+
+
+
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }

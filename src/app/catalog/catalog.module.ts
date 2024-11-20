@@ -2,20 +2,32 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CatalogComponent } from './catalog/catalog.component';
 import { DetailsComponent } from './details/details.component';
+import {DeviceService} from "./device.service";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {RouterLink} from "@angular/router";
+import {SharedModule} from "../shared/shared.module";
+import {FeaturesModule} from "../features/features.module";
 
 
 
 @NgModule({
     declarations: [
         CatalogComponent,
-        DetailsComponent
+        DetailsComponent,
+
     ],
   exports: [
     CatalogComponent,
-    DetailsComponent
+    DetailsComponent,
+
   ],
-    imports: [
-        CommonModule
-    ]
+  imports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    RouterLink,
+    SharedModule,
+    FeaturesModule
+  ]
 })
 export class CatalogModule { }
