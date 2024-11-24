@@ -4,8 +4,6 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import {RouterLink} from "@angular/router";
 
-
-
 @NgModule({
     declarations: [
         HeaderComponent,
@@ -19,5 +17,6 @@ import {RouterLink} from "@angular/router";
         CommonModule,
         RouterLink
     ]
+
 })
 export class CoreModule { }

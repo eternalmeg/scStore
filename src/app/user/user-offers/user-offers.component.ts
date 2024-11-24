@@ -16,11 +16,11 @@ export class UserOffersComponent implements OnInit{
   devices: Device[] | undefined = undefined;
  hasDevices = false;
   isLoading = true;
-  deviceId = this.route.snapshot.params["id"]
 
 
   constructor(private userService: UserService, private router: Router,private deviceService: DeviceService, private route: ActivatedRoute) {
   }
+
 
   ngOnInit(): void {
     this.userService.getProfile().subscribe((user) => {

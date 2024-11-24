@@ -16,15 +16,7 @@
 /*--------------------------------------------------------------------- import Files ---------------------------------------------------------------------*/
 
 @import url(animate.min.css);
-@import url(normalize.css);
-@import url(icomoon.css);
-@import url(font-awesome.min.css);
-@import url(meanmenu.css);
-@import url(owl.carousel.min.css);
-@import url(slick.css);
-@import url(jquery.fancybox.min.css);
-@import url(jquery-ui.css);
-@import url(nice-select.css);
+
 
 /*--------------------------------------------------------------------- skeleton ---------------------------------------------------------------------*/
 
@@ -598,9 +590,8 @@ ul.btn li:last-child {
 /** products section **/
 
 .products {
-     margin-top: 90px;
      background: #f7f7f7;
-     padding: 90px 0 90px 0;
+     padding: 143px 0 90px 0;
 }
 
 .our_products {
