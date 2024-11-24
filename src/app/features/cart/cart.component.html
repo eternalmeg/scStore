@@ -6,7 +6,7 @@
         <div class="titlepage">
           <p>Every Computer and laptop</p>
           <h2>Up to 40% off !</h2>
-          <div style="display: flex">
+          <div class="buttons" style="display: flex">
             <a class="read_more" (click)="buyHandler()">Buy</a>
             <a class="read_more" routerLink="/catalog">Cancel</a>
           </div>
@@ -18,10 +18,15 @@
           <table  *ngFor="let device of devices">
             <tr>
               <td>{{device.brand}} {{device.model}}</td>
-              <td>{{device.price}}</td>
+              <td>{{device.price}} BGN</td>
             </tr>
           </table>
-          <p>Total: {{price}} BGN</p>
+          <table>
+            <tr class="total">
+              <td>Total: </td>
+              <td>{{price}} BGN</td>
+            </tr>
+          </table>
         </div>
       </div>
     </div>

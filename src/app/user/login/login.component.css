@@ -1,73 +1,110 @@
-.login{
+.header {
+  background-color: transparent;
+}
+.header h3 {
+  font-size: 2em;
+}
+.register{
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(0, 0, 0,0.4);
   height: 100%;
-  padding-top: 200px;
+  padding-top: 100px;
 
 }
-.login form{
+.register form{
   display: flex;
+  flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
   width: 50em;
-  background-color: rgba(0, 0, 0,0.6);
-  color:#56f3e6;
-  height: 20em;
+  border: 1px solid;
+
+  color: whitesmoke;
+  min-height: 20em;
   border-radius: 1em;
+  padding: 1em 0;
 }
-.login .header{
+.register form .header{
   position: relative;
+  text-align: center;
+
 }
-app-error-message{
+.register form app-error-message{
   position: absolute;
 }
-.login form h3{
-  font-size: 3em;
+.register form h3{
+  font-size: 2em;
   text-transform: uppercase;
   margin-bottom: 0;
+
 }
-.login form .fields{
+.register form .fields{
   display: flex;
   flex-direction: column;
   gap: 2em;
-
 }
-.login form .fields .field{
+.register form .fields .field{
+  background-color: transparent;
   display: flex;
   gap: 2em;
   justify-content: space-between;
   align-items: center;
   position: relative;
+
 }
-.login form .fields .field label{
-  font-size: 1.5em;
+.register form .fields .field {
+  font-size: 16px;
+  font-weight: bolder;
 }
-.login form .fields .field input{
+.register form .fields .field input{
+  background-color: transparent;
+  color: whitesmoke;
   min-width: 15em;
   min-height: 2em;
-  border: 2px solid #56f3e6;
-  border-radius: 0.5em;
+  border-bottom: 4px solid whitesmoke;
+
+}
+.button {
+  text-align: center;
+}
+.button input {
+  border-radius: 30px;
 }
 
-.login form .fields .button input{
-  background-color: black;
-  color: #56f3e6;
-  border: 1px solid #56f3e6;
+.register form .fields .button input{
+  background-color: transparent;
+  color: whitesmoke;
+  border: 2px solid whitesmoke;
   padding: 0.5em 1em;
   font-size: 1.5em;
 }
-.login form .fields .button input:hover{
+.register form .fields .button input:hover{
+  background-color: #21b443;
   color: white;
   border-color: white;
   cursor: pointer;
 }
+
+h5 {
+  font-style: italic;
+  font-size: 1em;
+  font-weight: normal;
+}
+h5 a {
+  color: #34ce57;
+  font-size: 1em;
+}
+
 .error{
   margin: 0;
   padding: 0;
   position: absolute;
+  font-style: italic;
+  width: 100%;
+  text-align: center;
   top: 2.2em;
-  left: 10em;
-  color: #f13232;
+  left: 0em;
+  color: red;
 }
+

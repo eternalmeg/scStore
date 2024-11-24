@@ -1,4 +1,6 @@
-<div class="login">
+<div class="contact">
+
+<div class="register">
   <form #form="ngForm" (ngSubmit)="submitHandler(form)">
     <div class="header">
       <h3>Login</h3>
@@ -6,8 +8,8 @@
     </div>
     <div class="fields">
       <div class="field">
-        <label>Email</label>
-        <input type="text" name="email" ngModel   #email="ngModel" required />
+
+        <input type="text" name="email" placeholder="email" ngModel   #email="ngModel" required />
         <div class="error" *ngIf="email.touched">
           <div *ngIf="email.errors?.['required']">
             Email is required!
@@ -15,8 +17,8 @@
         </div>
       </div>
       <div class="field">
-        <label>Password</label>
-        <input type="password" name="password" ngModel #password="ngModel" required />
+
+        <input type="password" name="password" placeholder="password" ngModel #password="ngModel" required />
         <div class="error" *ngIf="password.touched">
           <div *ngIf="password.errors?.['required']">
             Password is required!
@@ -26,8 +28,9 @@
       <div class="button">
         <input type="submit" value="Login" />
       </div>
+      <h5>Don't have an account? Register <a routerLink="/register">here</a></h5>
     </div>
   </form>
 </div>
 
-
+</div>

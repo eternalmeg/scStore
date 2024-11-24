@@ -5,6 +5,9 @@
   justify-content: center;
 
 }
+.three_box1 h3 {
+  font-style: italic;
+}
 
 .box_text_test {
   background:whitesmoke;
@@ -65,10 +68,17 @@ text-align: center;
 .profile-btn {
   display: flex;
   flex-direction: row;
+
 }
 
 .computer-reg {
 
+}
+.header {
+  background-color: transparent;
+}
+.header h3 {
+  font-size: 2em;
 }
 .register{
   display: flex;
@@ -80,9 +90,11 @@ text-align: center;
 }
 .register form{
   display: flex;
+  flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
   width: 50em;
+  border: 1px solid;
 
   color: whitesmoke;
   min-height: 20em;
@@ -91,14 +103,17 @@ text-align: center;
 }
 .register form .header{
   position: relative;
+  text-align: center;
+
 }
 .register form app-error-message{
   position: absolute;
 }
 .register form h3{
-  font-size: 3em;
+  font-size: 2em;
   text-transform: uppercase;
   margin-bottom: 0;
+
 }
 .register form .fields{
   display: flex;
@@ -112,6 +127,7 @@ text-align: center;
   justify-content: space-between;
   align-items: center;
   position: relative;
+
 }
 .register form .fields .field {
   font-size: 16px;
@@ -122,8 +138,17 @@ text-align: center;
   color: whitesmoke;
   min-width: 15em;
   min-height: 2em;
-  border: 2px solid whitesmoke;
+  border-bottom: 4px solid whitesmoke;
 
+}
+.button {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  gap: 2em;
+}
+.button input {
+  border-radius: 30px;
 }
 
 .register form .fields .button input{
@@ -139,13 +164,28 @@ text-align: center;
   border-color: white;
   cursor: pointer;
 }
+
+h5 {
+  font-style: italic;
+  font-size: 1em;
+  font-weight: normal;
+}
+h5 a {
+  color: #34ce57;
+  font-size: 1em;
+}
+
 .error{
   margin: 0;
   padding: 0;
   position: absolute;
+  font-style: italic;
+  width: 100%;
+  text-align: center;
   top: 2.2em;
   left: 0em;
   color: red;
 }
+
 
 

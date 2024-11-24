@@ -20,7 +20,7 @@
               <button class="edit-btn" (click)="deleteHandler()">Delete</button>
             </div>
             <div class="profile-btn"  *ngIf="isLoggedIn && !isOwner">
-              <button class="edit-btn" (click)="buyHandler()"  >Buy</button>
+              <button class="edit-btn" (click)="buyHandler()" [disabled]="isPurchased"  >Buy</button>
               <button class="edit-btn" routerLink="/catalog">Cancel</button>
             </div>
 

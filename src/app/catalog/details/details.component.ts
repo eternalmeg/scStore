@@ -16,6 +16,8 @@ export class DetailsComponent implements OnInit {
   deviceId = this.route.snapshot.params["id"];
   isLoggedIn = false;
   isOwner = false;
+  isPurchased = false;
+
 
   constructor(private deviceService: DeviceService,
               private route: ActivatedRoute,
@@ -31,6 +33,14 @@ export class DetailsComponent implements OnInit {
       this.userService.user$.subscribe((user)=> {
         if(user) {
           this.isLoggedIn = true;
+          console.log(user.preferDevice)
+          if (Array.isArray(user?.preferDevice) &&
+            user.preferDevice.some(device => device._id === this.deviceId)) {
+            console.log("YES");
+            this.isPurchased = true;
+          } else {
+            console.log("NO");
+          }
 
           // @ts-ignore
           if(this.device?.owner === user?._id) {
@@ -72,7 +82,8 @@ export class DetailsComponent implements OnInit {
         .subscribe({
           next: () => {
             alert("Device successfully added to your cart!");
-            this.router.navigate(['/catalog']);
+            this.isPurchased = true;
+            this.router.navigate(['/cart']);
           },
           error: (err) => {
             console.error('Error purchasing device', err);

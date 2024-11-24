@@ -4,6 +4,7 @@ import { LoaderComponent } from './loader/loader.component';
 import {AppMatchPasswordsDirective} from "./directives/app-match-passwords.directive";
 import {ErrorMessageComponent} from "./error-message/error-message.component";
 import { ErrorPageComponent } from './error-page/error-page.component';
+import {RouterLink} from "@angular/router";
 
 
 @NgModule({
@@ -21,8 +22,9 @@ import { ErrorPageComponent } from './error-page/error-page.component';
     ErrorPageComponent,
     LoaderComponent
   ],
-  imports: [
-    CommonModule
-  ]
+    imports: [
+        CommonModule,
+        RouterLink
+    ]
 })
 export class SharedModule { }

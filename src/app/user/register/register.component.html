@@ -11,7 +11,6 @@
 
     <div class="fields">
       <div class="field">
-        <label></label>
         <input type="text" placeholder="name" name="name" ngModel #name="ngModel" required minlength="5" />
         <div class="error" *ngIf="name.touched">
           <div *ngIf="name.errors?.['required']">
@@ -24,7 +23,6 @@
       </div>
 
       <div class="field">
-        <label></label>
         <input type="text" name="email" placeholder="email" ngModel #email="ngModel" required pattern="{{emailValidatorPattern}}" />
         <div class="error" *ngIf="email.touched">
           <div *ngIf="email.errors?.['required']">
@@ -37,7 +35,6 @@
       </div>
 
       <div class="field">
-        <label></label>
         <input type="text" name="phone" placeholder="Phone number" ngModel #phone="ngModel" required min="1" max="105"/>
         <div class="error" *ngIf="phone.touched">
           <div *ngIf="phone.errors?.['required']">
@@ -51,7 +48,6 @@
 
       <ng-container ngModelGroup="passwords" #passwords="ngModelGroup" appAppMatchPasswords   >
         <div class="field">
-          <label></label>
           <input type="password" name="password" placeholder="Password" ngModel #password="ngModel"  required minlength="5" />
           <div class="error" *ngIf="password.touched">
             <div *ngIf="password.errors?.['required']">
@@ -64,7 +60,6 @@
         </div>
 
         <div class="field">
-          <label></label>
           <input type="password" name="repeatPassword" placeholder="Repeat Password" ngModel #repeatPassword="ngModel"  required    />
           <div class="error" *ngIf="repeatPassword.touched">
             <div *ngIf="repeatPassword.errors?.['required']">
@@ -80,6 +75,7 @@
       <div class="button">
         <input type="submit" value="Register" />
       </div>
+      <h5>Already have an account? Login <a routerLink="/login">here</a></h5>
     </div>
   </form>
 </div>
