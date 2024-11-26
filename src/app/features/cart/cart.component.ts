@@ -4,6 +4,7 @@ import {Device} from "../../types/device";
 import {UserService} from "../../user/user.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {DeviceService} from "../../catalog/device.service";
+import {filter} from "rxjs";
 
 @Component({
   selector: 'app-cart',
@@ -58,6 +59,28 @@ export class CartComponent implements OnInit{
         alert('Failed to complete the purchase. Please try again later.');
       }
     });
+  }
+
+  cancelHandler(deviceId:string) {
+    if (!confirm("Are you sure you want to cancel this purchase?")) {
+      return;
+    }
+    this.deviceService.cancelPrefer(deviceId).subscribe({
+      next: (response) => {
+        alert(response.message);
+
+        this.devices = this.devices?.filter(device => device._id !== deviceId);
+
+        this.price = this.devices?.reduce((sum, device) => sum + (device.price || 0), 0);
+
+        if (this.devices?.length === 0) {
+          this.hasDevices = false;
+        }
+      },
+      error: (err) => {
+        alert('Failed to cancel the purchase. Please try again.')
+      }
+    })
   }
 
 

@@ -15,7 +15,6 @@ import { ErrorService } from './shared/error-message/error.service';
 @Injectable()
 export class AppInterceptor implements HttpInterceptor {
   constructor(private router: Router, private errorService: ErrorService) { }
-
   intercept(
     req: HttpRequest<any>,
     next: HttpHandler

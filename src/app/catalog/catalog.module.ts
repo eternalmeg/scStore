@@ -7,6 +7,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {RouterLink} from "@angular/router";
 import {SharedModule} from "../shared/shared.module";
 import {FeaturesModule} from "../features/features.module";
+import { SearchComponent } from './search/search.component';
 
 
 
@@ -14,11 +15,13 @@ import {FeaturesModule} from "../features/features.module";
     declarations: [
         CatalogComponent,
         DetailsComponent,
+        SearchComponent,
 
     ],
   exports: [
     CatalogComponent,
     DetailsComponent,
+    SearchComponent
 
   ],
   imports: [
@@ -27,7 +30,8 @@ import {FeaturesModule} from "../features/features.module";
     ReactiveFormsModule,
     RouterLink,
     SharedModule,
-    FeaturesModule
+    FeaturesModule,
+
   ]
 })
 export class CatalogModule { }

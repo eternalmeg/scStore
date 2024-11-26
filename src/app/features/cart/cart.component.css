@@ -2,14 +2,16 @@ table {
   width: 100%;
   height: auto;
   color: white;
-  border: 1px solid whitesmoke;
+
   text-align: center;
 
 }
 
 table td{
-  border: 1px solid whitesmoke;
-  width: 60%;
+  border-bottom: 1px solid whitesmoke;
+  width: 30%;
+  height: 80px;
+
 }
 
 .laptop {
@@ -27,4 +29,11 @@ table td{
 
 .read_more {
   border-radius: 30px;
+}
+.clear-btn {
+  width: 50%;
+  border: 1px solid whitesmoke;
+  border-radius: 30px;
+  background-color: transparent;
+  color: whitesmoke;
 }

@@ -62,6 +62,7 @@ export class DetailsComponent implements OnInit {
          next: ()=> {
            alert("Offer deleted successfully!");
            this.router.navigate(['/my-offers'])
+           console.log(this.device?.preferredList)
          },
          error: (err) => {
            console.error('Error deleting offer', err);

@@ -48,4 +48,13 @@ export class DeviceService {
     return this.http.post<{ message: string }>(`${this.api}/devices/delete-multiple`, { deviceIds });
   }
 
+  searchDevice(brand: string) {
+    return this.http.get<Device[]>(`${this.api}/devices/search/${brand}`, {})
+  }
+
+  cancelPrefer(deviceId: string) {
+    return this.http.post<{message: string}>(`${this.api}/devices/cancel/${deviceId}`, {});
+  }
+
+
 }

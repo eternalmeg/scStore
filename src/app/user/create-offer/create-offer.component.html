@@ -1,35 +1,40 @@
 
-  <div class="container">
-    <h2>Edit your offer</h2>
-    <p>Fill in the details below to edit product to the catalog.</p>
+<div class="contact">
+  <div class="register">
 
 
+    <form #form="ngForm" (ngSubmit)="submitHandler()">
+      <div class="header">
+        <h3>Edit your offer here</h3>
+        <app-error-message />
+      </div>
+      <div class="fields">
 
-<section class="create-form">
-  <div class="container">
-    <form #form="ngForm" (ngSubmit)="submitHandler()" >
-      <div class="form-group">
-        <label for="brand">Brand:</label>
+      <div class="field">
         <input type="text" id="brand" name="brand" ngModel #brand="ngModel">
       </div>
-      <div class="form-group">
-        <label for="model">Model:</label>
+      <div class="field">
         <input type="text" id="model" name="model" ngModel #model="ngModel">
       </div>
-      <div class="form-group">
-        <label for="model">Description:</label>
+      <div class="field">
         <input type="text" id="description" name="description" ngModel #description>
       </div>
-      <div class="form-group">
-        <label for="price">Price:</label>
+      <div class="field">
         <input type="text" id="price" name="price" ngModel #price="ngModel">
       </div>
-      <div class="form-group">
-        <label for="image">Image:</label>
+      <div class="field">
         <input type="text" id="image" name="image" ngModel #price="ngModel">
       </div>
-      <button type="submit" class="btn">Edit Product</button>
+        <div class="button">
+          <input type="submit" class="btn" value="Edit Product" />
+        </div>
+
+
+      </div>
     </form>
+
+
+
+
   </div>
-</section>
   </div>

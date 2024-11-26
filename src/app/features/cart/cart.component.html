@@ -19,12 +19,15 @@
             <tr>
               <td>{{device.brand}} {{device.model}}</td>
               <td>{{device.price}} BGN</td>
+              <td><button class="clear-btn"  (click)="cancelHandler(device._id ?? '')" >clear</button></td>
             </tr>
           </table>
           <table>
             <tr class="total">
               <td>Total: </td>
               <td>{{price}} BGN</td>
+              <td><button class="clear-btn">clear all</button></td>
+
             </tr>
           </table>
         </div>
